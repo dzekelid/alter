@@ -12,20 +12,16 @@ modified: "2018-08-25"
 url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/apis.md
 specificationVersion: "0.14"
 apis:
-- name: Confluence Cloud API
-  x-api-slug: confluence-cloud-api
-  description: Millions of users globally rely on Atlassian products every day for
-    improving software development, project management, collaboration, and code quality.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/691-atlassian.jpg
-  humanURL: http://atlassian.com/
-  baseURL: https:////
-  tags: Alter
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/openapi.md
-- name: Jira Cloud API
-  x-api-slug: jira-cloud-api
-  description: jira-cloud-rest-api-documentation
+- name: Jira Cloud REST API - Delete version
+  x-api-slug: api2versionid-delete
+  description: Deletes a project version. Deprecated, use [Delete and replace version](https://developer.atlassian.com/cloud/jira/platform/rest/#api-api-2-version-id-removeAndSwap-post)
+    that supports swapping version values in custom fields, in addition to the swapping
+    for `fixVersion` and `affectedVersion` provided in this resource. Alternative
+    versions can be provided to update issues that use the deleted version in `fixVersion`
+    or `affectedVersion`. If alternatives are not provided, occurrences of `fixVersion`
+    and `affectedVersion` that contain the deleted version are cleared. **[Permissions](https://confluence.atlassian.com/x/FQiiLQ)
+    required:** _Administer Jira_ [global permission](https://confluence.atlassian.com/x/x4dKLg)
+    or _Administer Projects_ [project permission](https://confluence.atlassian.com/x/yodKLg).
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/691-atlassian.jpg
   humanURL: http://atlassian.com/
   baseURL: https:////
@@ -37,9 +33,17 @@ apis:
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/api2versionid-delete-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/api2versionid-delete-openapi.md
-- name: Jira Cloud API
-  x-api-slug: jira-cloud-api
-  description: jira-cloud-rest-api-documentation
+- name: Jira Cloud REST API - Delete and replace version
+  x-api-slug: api2versionidremoveandswap-post
+  description: Deletes a project version. **[Permissions](https://confluence.atlassian.com/x/FQiiLQ)
+    required:** _Administer Jira_ [global permission](https://confluence.atlassian.com/x/x4dKLg)
+    or _Administer Projects_ [project permission](https://confluence.atlassian.com/x/yodKLg).
+    Alternative versions can be provided to update issues that use the deleted version
+    in `fixVersion`, `affectedVersion`, or any version picker custom fields. If alternatives
+    are not provided, occurrences of `fixVersion`, `affectedVersion`, and any version
+    picker custom field, that contain the deleted version, are cleared. Any replacement
+    version must be in the same project as the version being deleted and cannot be
+    the version being deleted.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/691-atlassian.jpg
   humanURL: http://atlassian.com/
   baseURL: https:////
@@ -47,47 +51,10 @@ apis:
     Enterprise, API Provider, API Service Provider, Profiles, Relative Data, Service
     API
   properties:
-  - type: x-postman-collection
-    url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/api2versionid-delete-postman.md
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/api2versionid-delete-openapi.md
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/api2versionidremoveandswap-post-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/api2versionidremoveandswap-post-openapi.md
-- name: Jira Cloud API
-  x-api-slug: jira-cloud-api
-  description: Millions of users globally rely on Atlassian products every day for
-    improving software development, project management, collaboration, and code quality.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/691-atlassian.jpg
-  humanURL: http://atlassian.com/
-  baseURL: https:////
-  tags: Alter
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/openapi.md
-- name: Jira Service Desk API
-  x-api-slug: jira-service-desk-api
-  description: Millions of users globally rely on Atlassian products every day for
-    improving software development, project management, collaboration, and code quality.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/691-atlassian.jpg
-  humanURL: http://atlassian.com/
-  baseURL: https:////
-  tags: Alter
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/openapi.md
-- name: Jira Software Cloud API
-  x-api-slug: jira-software-cloud-api
-  description: Millions of users globally rely on Atlassian products every day for
-    improving software development, project management, collaboration, and code quality.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/691-atlassian.jpg
-  humanURL: http://atlassian.com/
-  baseURL: https:////
-  tags: Alter
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-topics/alter/master/_listings/atlassian/openapi.md
 x-common:
 - type: x-openapi
   url: https://developer.atlassian.com/cloud/jira/platform/swagger.v3.json
